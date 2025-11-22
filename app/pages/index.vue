@@ -152,7 +152,7 @@ const projects: Project[] = [
     status: 'Production',
     github: 'https://github.com/Senghong-2025/Ampere',
     demo: 'https://ampere-sras-chork.pages.dev/',
-    background: new URL('@/assets/projects/ampere.png', import.meta.url).href
+    background: '/projects/ampere.png'
   },
   {
     id: 2,
@@ -164,7 +164,7 @@ const projects: Project[] = [
     status: 'Production',
     github: 'https://github.com/Senghong-2025/tmr',
     demo: 'https://trm-7pr.pages.dev',
-    background: new URL('@/assets/projects/trm.jpg', import.meta.url).href
+    background: '/projects/trm.jpg'
   },
   {
     id: 3,
@@ -176,7 +176,7 @@ const projects: Project[] = [
     status: 'Production',
     github: 'https://github.com/Senghong-2025/teab-ka',
     demo: 'https://havmk.pages.dev/home',
-    background: new URL('@/assets/projects/invite-web.png', import.meta.url).href
+    background: '/projects/invite-web.png'
   },
   // {
   //   id: 3,
