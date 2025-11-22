@@ -57,9 +57,7 @@ const {
 } = usePortfolioData();
 
 // SEO Configuration
-const { setPageSEO, setStructuredData } = useSEO();
-
-setPageSEO({
+useSEO({
   title: 'Home',
   description: 'Hang Senghong - Full Stack Developer specializing in Vue.js, Nuxt.js, .NET Core, and modern web technologies. Building scalable, high-performance applications with clean code and exceptional user experiences.',
   keywords: [
@@ -80,52 +78,50 @@ setPageSEO({
   ],
   author: 'Hang Senghong',
   type: 'profile',
-});
-
-// Structured Data for Rich Search Results
-setStructuredData({
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Hang Senghong',
-  jobTitle: 'Full Stack Developer',
-  url: 'https://senghong-portfolio.web.app',
-  sameAs: [
-    'https://www.linkedin.com/in/hang-senghong-158674383',
-    'https://x.com/Hongprogrammer',
-    'https://github.com/Senghong-2025',
-    'https://senghong.pages.dev',
-  ],
-  description: 'Full Stack Developer specializing in building scalable, high-performance applications with modern technologies.',
-  knowsAbout: [
-    'Vue.js',
-    'Nuxt.js',
-    'TypeScript',
-    'Firebase',
-    '.NET Core',
-    'C#',
-    'SQL Server',
-    'Docker',
-    'PostgreSQL',
-    'MongoDB',
-    'Node.js',
-    'Flutter',
-  ],
-  alumniOf: {
-    '@type': 'EducationalOrganization',
-    name: 'Norton University',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Phnom Penh',
-      addressCountry: 'Cambodia',
+  structuredData: {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Hang Senghong',
+    jobTitle: 'Full Stack Developer',
+    url: 'https://senghong-portfolio.web.app',
+    sameAs: [
+      'https://www.linkedin.com/in/hang-senghong-158674383',
+      'https://x.com/Hongprogrammer',
+      'https://github.com/Senghong-2025',
+      'https://senghong.pages.dev',
+    ],
+    description: 'Full Stack Developer specializing in building scalable, high-performance applications with modern technologies.',
+    knowsAbout: [
+      'Vue.js',
+      'Nuxt.js',
+      'TypeScript',
+      'Firebase',
+      '.NET Core',
+      'C#',
+      'SQL Server',
+      'Docker',
+      'PostgreSQL',
+      'MongoDB',
+      'Node.js',
+      'Flutter',
+    ],
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'Norton University',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Phnom Penh',
+        addressCountry: 'Cambodia',
+      },
     },
-  },
-  worksFor: {
-    '@type': 'Organization',
-    name: 'Techbodia',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Veal Sbov',
-      addressCountry: 'Cambodia',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Techbodia',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Veal Sbov',
+        addressCountry: 'Cambodia',
+      },
     },
   },
 });
