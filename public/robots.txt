@@ -1,2 +1,11 @@
-User-Agent: *
-Disallow:
+# robots.txt for Hang Senghong Portfolio
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://senghong-portfolio.web.app/sitemap.xml
