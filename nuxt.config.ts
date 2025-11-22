@@ -14,7 +14,10 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: false
     },
-    preset: 'static'
+    preset: 'static',
+    firebase: {
+      gen: 2 // Use Firebase Functions Generation 2
+    }
   },
   ssr: false,
 
