@@ -60,7 +60,7 @@
                 <div class="flex items-center justify-center gap-6 pt-4 text-sm">
                   <div class="flex items-center gap-2">
                     <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
-                    <span class="text-gray-400">4+ Years</span>
+                    <span class="text-gray-400">3+ Years</span>
                   </div>
                   <div class="w-px h-4 bg-gray-700"></div>
                   <div class="flex items-center gap-2">
@@ -143,21 +143,21 @@
     <span class="text-blue-400">buildAmazingApps</span>(): <span class="text-yellow-400">void</span>;
   }
 
-  <span class="text-purple-400">const</span> <span class="text-blue-400">developer</span>: <span class="text-cyan-400">Developer</span> = {
-    <span class="text-blue-400">name</span>: <span class="text-green-400">"{{ name }}"</span>,
-    <span class="text-blue-400">skills</span>: [
-      <span class="text-green-400">"Vue.js"</span>, 
-      <span class="text-green-400">"TypeScript"</span>,
-      <span class="text-green-400">"NestJS"</span>,
-      <span class="text-green-400">"Nuxt"</span>, 
-      <span class="text-green-400">"Firebase"</span>
-      <span class="text-green-400">".Net Core"</span>, 
-      <span class="text-green-400">"SQL"</span>,
-    ],
-    <span class="text-blue-400">buildAmazingApps</span>: () => {
-      <span class="text-gray-500">// Magic happens here ✨</span>
-    }
-  };<span class="inline-block w-2 h-4 bg-cyan-400 ml-1 animate-blink-cursor"></span></code></pre>
+<span class="text-purple-400">const</span> <span class="text-blue-400">developer</span>: <span class="text-cyan-400">Developer</span> = {
+  <span class="text-blue-400">name</span>: <span class="text-green-400">"{{ name }}"</span>,
+  <span class="text-blue-400">skills</span>: [
+    <span class="text-green-400">"Vue.js"</span>, 
+    <span class="text-green-400">"TypeScript"</span>,
+    <span class="text-green-400">"NestJS"</span>,
+    <span class="text-green-400">"Nuxt"</span>, 
+    <span class="text-green-400">"Firebase"</span>
+    <span class="text-green-400">".Net Core"</span>, 
+    <span class="text-green-400">"SQL"</span>,
+  ],
+  <span class="text-blue-400">buildAmazingApps</span>: () => {
+    <span class="text-gray-500">// Magic happens here ✨</span>
+  }
+};<span class="inline-block w-2 h-4 bg-cyan-400 ml-1 animate-blink-cursor"></span></code></pre>
 
             <!-- Glow effects -->
             <div
@@ -169,12 +169,12 @@
           </div>
 
           <!-- Floating tech badges -->
-          <div class="absolute -right-8 top-10 animate-float hidden lg:block">
+          <div class="absolute -right-8 top-14 animate-float hidden lg:block">
             <div class="px-3 py-2 bg-slate-900/90 backdrop-blur-sm border border-cyan-500/30 rounded-lg shadow-lg">
               <span class="text-sm text-cyan-400">⚡ Fast</span>
             </div>
           </div>
-          <div class="absolute -left-8 bottom-20 animate-float-delayed hidden lg:block">
+          <div class="absolute -left-16 bottom-20 animate-float-delayed hidden lg:block">
             <div class="px-3 py-2 bg-slate-900/90 backdrop-blur-sm border border-blue-500/30 rounded-lg shadow-lg">
               <span class="text-sm text-blue-400">🚀 Scalable</span>
             </div>

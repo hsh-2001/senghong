@@ -18,7 +18,7 @@
             class="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
           </div>
           <div class="relative z-10">
-            <div class="text-4xl font-bold text-blue-400 mb-2">4+</div>
+            <div class="text-4xl font-bold text-blue-400 mb-2">3+</div>
             <div class="text-sm text-gray-400">Years Experience on jobs</div>
           </div>
         </div>
