@@ -1,5 +1,5 @@
 import type { NavLink, Social, Tech, Project, Experience, Education } from '~/models/portfolio';
-import profileImageSrc from '~/assets/profiles/profile.jpg';
+import profileImageSrc from '~/assets/profiles/senghong.jpg';
 
 export const usePortfolioData = () => {
   const profileImage = profileImageSrc;

@@ -13,27 +13,27 @@
           I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a href="mailto:senghonghang@gmail.com"
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12" >
+          <a @click="openCloudFlareSite"
             class="group px-8 py-4 bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- <svg class="w-6 h-6 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            Send Email
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg> -->
+            Contact Me
           </a>
-          <a href="#"
+          <!-- <a href="#"
             class="px-8 py-4 border border-cyan-500/30 hover:border-cyan-500 rounded-lg font-semibold transition-all duration-300 hover:bg-cyan-500/10 flex items-center justify-center gap-3">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
             Download CV
-          </a>
+          </a> -->
         </div>
 
         <!-- Contact Form -->
-        <div v-if="!isFirebaseDomain" class="max-w-2xl mx-auto my-16">
+        <div v-if="isFirebaseDomain" class="max-w-2xl mx-auto my-16" id="contact">
           <form @submit.prevent="handleSubmit" class="space-y-6">
             <div class="grid md:grid-cols-2 gap-6">
               <!-- Name Input -->
@@ -143,7 +143,11 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
 
-const isFirebaseDomain = computed(() => window.location.origin.includes('senghong-portfolio.web.app'));
+const isFirebaseDomain = computed(() => window?.origin.includes('senghong-portfolio.web.app'));
+
+const openCloudFlareSite = () => {
+  window.location.href = "https://senghong.pages.dev/#contact";
+}
 interface Social {
   name: string;
   icon: string;
