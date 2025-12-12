@@ -33,7 +33,7 @@
         </div>
 
         <!-- Contact Form -->
-        <div v-if="isFirebaseDomain" class="max-w-2xl mx-auto my-16" id="contact">
+        <div v-if="!isFirebaseDomain" class="max-w-2xl mx-auto my-16" id="contact">
           <form @submit.prevent="handleSubmit" class="space-y-6">
             <div class="grid md:grid-cols-2 gap-6">
               <!-- Name Input -->
