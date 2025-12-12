@@ -14,7 +14,7 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12" >
-          <a @click="openCloudFlareSite"
+          <a v-if="isFirebaseDomain" @click="openCloudFlareSite"
             class="group px-8 py-4 bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105">
             <!-- <svg class="w-6 h-6 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

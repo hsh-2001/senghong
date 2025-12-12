@@ -10,16 +10,16 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  // nitro: {
-  //   preset: 'static',
-  //   firebase: {
-  //     gen: 2 // Use Firebase Functions Generation 2
-  //   }
-  // },
   nitro: {
-    preset: 'cloudflare'
+    preset: 'static',
+    firebase: {
+      gen: 2 // Use Firebase Functions Generation 2
+    }
   },
-  ssr: true,
+  // nitro: {
+  //   preset: 'cloudflare'
+  // },
+  // ssr: true,
 
   runtimeConfig: {  
     // Private keys (only available on server-side)
