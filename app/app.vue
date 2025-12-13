@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-  onMounted(async () => {
+onMounted(async () => {
   try {
     await $fetch('/api/notify', {
       method: 'POST',

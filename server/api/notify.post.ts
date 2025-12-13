@@ -1,38 +1,36 @@
-export default defineCachedEventHandler(async (event) => {
+  import { UAParser } from 'ua-parser-js';
+
+export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
 
-  const telegramBotToken = config.telegramBotToken;
-  const telegramChatId = config.telegramChatId;
+  const ua = getHeader(event, 'user-agent') || '';
+  const ip = getRequestIP(event, { xForwardedFor: true }) || 'Unknown';
 
-  // Get request headers
-  const userAgent = getHeader(event, 'user-agent') || 'Unknown';
-  const ip =
-    getHeader(event, 'x-forwarded-for') ||
-    event.node.req.socket.remoteAddress ||
-    'Unknown';
+  const parser = new UAParser(ua);
+  const result = parser.getResult();
+
+  const deviceType = result.device.type || 'Desktop';
+  const deviceModel = result.device.model || 'Unknown';
+  const os = `${result.os.name} ${result.os.version}`;
+  const browser = `${result.browser.name} ${result.browser.version}`;
 
   const message = `
 🆕 *New Access*
-📱 *User-Agent:* ${userAgent}
-🌍 *IP:* ${ip}
+📦 Device: ${deviceType}
+📱 Model: ${deviceModel}
+💻 OS: ${os}
+🌐 Browser: ${browser}
+🌍 IP: ${ip}
 `;
 
-  try {
-    await $fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-      method: 'POST',
-      body: {
-        chat_id: telegramChatId,
-        text: message,
-        parse_mode: 'Markdown',
-      },
-    });
+  await $fetch(`https://api.telegram.org/bot${config.telegramBotToken}/sendMessage`, {
+    method: 'POST',
+    body: {
+      chat_id: config.telegramChatId,
+      text: message,
+      parse_mode: 'Markdown',
+    },
+  });
 
-    return { success: true };
-  } catch (error) {
-    console.error(error);
-    throw createError({
-      statusCode: 500,
-      statusMessage: 'Failed to send message',
-    });
-  }
+  return { ok: true };
 });
