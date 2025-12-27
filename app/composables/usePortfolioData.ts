@@ -97,6 +97,23 @@ export const usePortfolioData = () => {
       "github": "https://github.com/Senghong-2025/first",
       "demo": "https://first.senghong-learning.workers.dev",
       "background": "/projects/upload.png",
+    },
+     {
+      "id": 5,
+      "name": "Programming tutorials",
+      "description": "A collection of programming tutorials and code snippets for various technologies, aimed at helping developers learn and improve their skills.",
+      "technologies": [
+        "Vue 3",
+        "VitePress",
+        "GitHub Pages",
+        "TypeScript",
+      ],
+      "gradient": "bg-linear-to-br from-blue-600 to-cyan-500",
+      "icon": "📚",
+      "status": "Live",
+      "github": "https://github.com/rean-program/docs01",
+      "demo": "https://rean-program.github.io/docs01/",
+      "background": "/projects/rean-program.png",
     }
   ];
 
