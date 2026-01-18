@@ -1,31 +1,22 @@
 <template>
   <div class="min-h-screen bg-slate-950 text-white overflow-x-hidden">
-    <!-- Enhanced Animated Background -->
     <AnimatedBackground />
 
-    <!-- Navigation -->
     <Navigation :developer-name="developer.name" :nav-links="navLinks" :socials="developer.socials" />
 
-    <!-- Hero Section -->
     <HeroSection :name="developer.name" :title="developer.title" :bio="developer.bio" :socials="developer.socials"
       :profile-image="profileImage" />
 
-    <!-- Stats Counter Section -->
     <StatsCounter />
 
-    <!-- Tech Stack Section -->
     <TechStack :tech-stack="techStack" />
 
-    <!-- Projects Section -->
     <ProjectsSection :projects="projects" />
 
-    <!-- Experience Timeline -->
     <ExperienceTimeline :experience="experience" />
 
-    <!-- Study Background Section -->
     <StudyBackground :education="education" />
 
-    <!-- Contact Section -->
     <ContactSection :socials="developer.socials" />
 
     <!-- Footer -->
