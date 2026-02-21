@@ -98,7 +98,7 @@ export const usePortfolioData = () => {
       "demo": "https://first.senghong-learning.workers.dev",
       "background": "/projects/upload.png",
     },
-     {
+    {
       "id": 5,
       "name": "Programming tutorials",
       "description": "A collection of programming tutorials and code snippets for various technologies, aimed at helping developers learn and improve their skills.",
@@ -114,6 +114,20 @@ export const usePortfolioData = () => {
       "github": "https://github.com/rean-program/docs01",
       "demo": "https://rean-program.github.io/docs01/",
       "background": "/projects/rean-program.png",
+    },
+    {
+      "id": 6,
+      "name": "Todo List CLI",
+      "description": "A beautiful, fast, and lightweight command-line todo list manager built with Node.js. Features a rich terminal UI with colors, box-drawing characters, and intuitive commands for efficient task management.",
+      "technologies": [
+        "Javascript",
+        "Node.Js"
+      ],
+      "gradient": "bg-linear-to-br from-blue-600 to-cyan-500",
+      "icon": "📚",
+      "status": "Local Setup",
+      "github": "https://github.com/Senghong-CLIs/CLIs/tree/main/todo",
+      "background": "/projects/todo-cli.png",
     }
   ];
 
