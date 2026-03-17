@@ -1,43 +1,34 @@
 <template>
   <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 pt-20">
     <div class="max-w-7xl mx-auto w-full relative z-10">
-      <!-- New Centered Layout -->
       <div class="text-center mb-16 animate-fade-in">
-        <!-- Profile Image with Card Container -->
         <div class="flex justify-center mb-12">
           <div class="relative group">
-            <!-- Premium Card Container -->
             <div
               class="relative bg-gradient-to-br from-slate-900/80 via-slate-800/80 to-slate-900/80 backdrop-blur-2xl rounded-3xl p-8 border border-cyan-500/20 shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/20 transition-all duration-500">
-              <!-- Profile Image -->
               <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto mb-6">
-                <!-- Rotating gradient ring -->
                 <div
                   class="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 via-purple-500 to-pink-500 animate-spin-slow opacity-75 blur-sm">
                 </div>
                 <div
-                  class="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 via-purple-500 to-pink-500 animate-gradient bg-size-[400%_400%] p-[4px]">
+                  class="absolute inset-0 rounded-full bg-linear-to-r from-cyan-400 via-blue-500 via-purple-500 to-pink-500 animate-gradient bg-size-[400%_400%] p-[4px]">
                   <div class="w-full h-full rounded-full bg-slate-950"></div>
                 </div>
 
-                <!-- Image container -->
                 <div class="absolute inset-[4px] rounded-full overflow-hidden border-4 border-slate-950 shadow-2xl">
                   <img :src="profileImage" alt="Professional Developer"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <!-- Shine effect -->
                   <div
                     class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
                   </div>
                 </div>
 
-                <!-- Floating orbs -->
                 <div class="absolute -top-4 -right-4 w-20 h-20 bg-cyan-500/20 rounded-full blur-xl animate-pulse">
                 </div>
                 <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse"
                   style="animation-delay: 1s;"></div>
               </div>
 
-              <!-- Name and Status Badge -->
               <div class="space-y-4">
                 <h2 class="text-3xl md:text-4xl font-bold text-white">
                   <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
@@ -46,7 +37,6 @@
                 </h2>
                 <p class="text-xl text-gray-400 font-medium">{{ title }}</p>
 
-                <!-- Status badge -->
                 <div
                   class="inline-flex items-center gap-2 px-5 py-2.5 bg-green-500/10 border border-green-500/30 rounded-full">
                   <div class="relative">

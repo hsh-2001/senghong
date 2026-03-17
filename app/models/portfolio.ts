@@ -14,6 +14,7 @@ export interface Tech {
   icon: string;
   category: string;
   level: number;
+  image?: string;
 }
 
 export interface Project {
@@ -35,7 +36,7 @@ export interface Experience {
   company: string;
   location: string;
   period: string;
-  description: string;
+  description: string | string[];
   technologies: string[];
 }
 

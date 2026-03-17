@@ -2,14 +2,24 @@
   <div class="min-h-screen bg-slate-950 text-white overflow-x-hidden">
     <AnimatedBackground />
 
-    <Navigation :developer-name="developer.name" :nav-links="navLinks" :socials="developer.socials" />
+    <Navigation
+      :developer-name="developer.name"
+      :nav-links="navLinks"
+      :socials="developer.socials"
+    />
 
-    <HeroSection :name="developer.name" :title="developer.title" :bio="developer.bio" :socials="developer.socials"
+    <HeroSection
+      :name="developer.name"
+      :title="developer.title"
+      :bio="developer.bio"
+      :socials="developer.socials"
       :profile-image="profileImage" />
 
     <StatsCounter />
 
-    <TechStack :tech-stack="techStack" />
+    <TechStack
+      :tech-stack="techStack"
+    />
 
     <ProjectsSection :projects="projects" />
 
@@ -19,7 +29,6 @@
 
     <ContactSection :socials="developer.socials" />
 
-    <!-- Footer -->
     <Footer :developer-name="developer.name" />
   </div>
 </template>
@@ -47,7 +56,6 @@ const {
   education,
 } = usePortfolioData();
 
-// SEO Configuration
 const siteUrl = 'https://senghong-portfolio.web.app';
 const title = 'Hang Senghong - Full Stack Developer';
 const description = 'Full Stack Developer specializing in Vue.js, Nuxt.js, NestJS, ExpresJS, .NET Core, SQL, NoSQL and modern web technologies. Building scalable, high-performance applications with clean code and exceptional user experiences.'

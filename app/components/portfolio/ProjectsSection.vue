@@ -6,7 +6,7 @@
           <span class="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Featured
             Projects</span>
         </h2>
-        <p class="text-gray-400 text-lg">Some of my recent work that I'm proud of</p>
+        <p class="text-gray-400 text-lg">Some of my personal projects that I'm proud of</p>
       </div>
 
       <div class="max-w-7xl mx-auto px-6 py-16">

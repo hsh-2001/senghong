@@ -33,7 +33,18 @@
                   {{ exp.period }}
                 </span>
               </div>
-              <p class="text-gray-400 leading-relaxed mb-4">{{ exp.description }}</p>
+              <div class="text-gray-400 leading-relaxed mb-4">
+                <template v-if="Array.isArray(exp.description)">
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li v-for="(desc, i) in exp.description" :key="i">
+                      {{ desc }}
+                    </li>
+                  </ul>
+                </template>
+                <template v-else>
+                  <p>{{ exp.description }}</p>
+                </template>
+              </div>
               <div class="flex flex-wrap gap-2">
                 <span v-for="tech in exp.technologies" :key="tech"
                   class="px-3 py-1 bg-slate-800 text-gray-300 rounded-full text-xs">
@@ -55,7 +66,7 @@ interface Experience {
   company: string;
   location: string;
   period: string;
-  description: string;
+  description: string | string[];
   technologies: string[];
 }
 

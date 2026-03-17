@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 animate-fade-in">
         <h2 class="text-4xl md:text-5xl font-bold mb-4">
-          <span class="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Tech Arsenal</span>
+          <span class="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Technical Skills</span>
         </h2>
         <p class="text-gray-400 text-lg">Technologies I work with on a daily basis</p>
       </div>
@@ -17,11 +17,11 @@
             class="absolute inset-0 bg-linear-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           </div>
 
-          <!-- Content -->
+
           <div class="relative z-10">
             <div
-              class="text-5xl mb-4 filter grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110">
-              {{ tech.icon }}
+              class="text-5xl mb-4 filter group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110">
+              <img :src="tech.image" :alt="tech.name" class="w-12 h-12 object-cover" />
             </div>
             <h3 class="font-semibold text-white mb-1 group-hover:text-cyan-400 transition-colors">{{ tech.name }}</h3>
             <p class="text-sm text-gray-500 mb-3">{{ tech.category }}</p>
@@ -52,6 +52,7 @@ interface Tech {
   icon: string;
   category: string;
   level: number;
+  image?: string;
 }
 
 interface Props {
