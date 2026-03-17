@@ -91,6 +91,17 @@ html[data-theme='light'] section article.rounded-3xl {
   box-shadow: none !important;
 }
 
+html[data-theme='light'] .mobile-menu-panel,
+html[data-theme='light'] .mobile-menu-card {
+  background: var(--panel-bg) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='light'] .mobile-menu-backdrop {
+  background: rgba(244, 244, 245, 0.8) !important;
+}
+
 html[data-theme='light'] #hero .bg-slate-950,
 html[data-theme='light'] #hero .bg-slate-950\/80,
 html[data-theme='light'] #hero .bg-slate-900\/60,
@@ -100,14 +111,16 @@ html[data-theme='light'] #hero .bg-slate-900\/85,
 html[data-theme='light'] #skills img.bg-white\/5,
 html[data-theme='light'] .bg-white\/5,
 html[data-theme='light'] .bg-slate-800\/50,
-html[data-theme='light'] .bg-slate-900\/80 {
+html[data-theme='light'] .bg-slate-900\/80,
+html[data-theme='light'] .bg-slate-900 {
   background-color: var(--surface-soft) !important;
 }
 
 html[data-theme='light'] .text-white,
 html[data-theme='light'] .text-slate-950,
 html[data-theme='light'] .text-slate-200,
-html[data-theme='light'] .text-slate-300 {
+html[data-theme='light'] .text-slate-300,
+html[data-theme='light'] .text-gray-300 {
   color: var(--text-color) !important;
 }
 
@@ -134,7 +147,9 @@ html[data-theme='light'] .bg-white {
 
 html[data-theme='light'] .hover\:bg-slate-100:hover,
 html[data-theme='light'] .hover\:bg-white\/10:hover,
-html[data-theme='light'] .hover\:bg-white\/5:hover {
+html[data-theme='light'] .hover\:bg-white\/5:hover,
+html[data-theme='light'] .hover\:bg-slate-800:hover,
+html[data-theme='light'] .hover\:bg-slate-800\/50:hover {
   background: var(--surface-strong) !important;
 }
 

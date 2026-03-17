@@ -49,32 +49,55 @@
     <Transition name="mobile-menu">
       <div v-if="isMobileMenuOpen" class="fixed inset-0 z-40 md:hidden">
         <!-- Backdrop -->
-        <div @click="toggleMobileMenu" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
+        <div
+          @click="toggleMobileMenu"
+          :class="isDark ? 'bg-slate-950/80' : 'bg-slate-200/70'"
+          class="mobile-menu-backdrop absolute inset-0 backdrop-blur-sm"
+        ></div>
 
         <!-- Menu Panel -->
         <div
-          class="absolute top-[73px] right-0 bottom-0 w-full max-w-sm border-l border-white/10 bg-slate-900 shadow-2xl">
+          :class="isDark ? 'border-white/10 bg-slate-900' : 'border-slate-300/80 bg-white/95'"
+          class="mobile-menu-panel absolute top-[73px] right-0 bottom-0 w-full max-w-sm border-l shadow-2xl">
           <div class="flex flex-col h-full p-6">
             <!-- Navigation Links -->
             <nav class="flex-1 space-y-2">
-              <a v-for="link in navLinks" :key="link.id" @click="scrollToSection(link.id); toggleMobileMenu()"
-                class="block cursor-pointer rounded-lg border border-transparent px-6 py-4 text-gray-300 transition-all hover:border-white/10 hover:bg-slate-800/50 hover:text-white">
+              <a
+                v-for="link in navLinks"
+                :key="link.id"
+                @click="scrollToSection(link.id); toggleMobileMenu()"
+                :class="isDark
+                  ? 'border-transparent text-gray-300 hover:border-white/10 hover:bg-slate-800/50 hover:text-white'
+                  : 'border-transparent text-slate-800 hover:border-slate-300 hover:bg-slate-100 hover:text-slate-950'"
+                class="mobile-menu-card block cursor-pointer rounded-lg border px-6 py-4 transition-all"
+              >
                 {{ link.label }}
               </a>
             </nav>
 
             <!-- Social Links -->
-            <div class="border-t border-white/10 pt-6">
+            <div :class="isDark ? 'border-white/10' : 'border-slate-300/80'" class="border-t pt-6">
               <button type="button" @click="toggleTheme"
-                class="mb-4 flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 transition hover:bg-white/10">
+                :class="isDark
+                  ? 'border-white/10 bg-white/5 text-slate-200 hover:bg-white/10'
+                  : 'border-slate-300 bg-slate-100 text-slate-900 hover:bg-slate-200'"
+                class="mobile-menu-card mb-4 flex w-full items-center justify-center gap-2 rounded-lg border px-4 py-3 text-sm transition"
+              >
                 <span>{{ isDark ? 'Light Mode' : 'Dark Mode' }}</span>
               </button>
-              <p class="text-xs uppercase tracking-widest text-gray-500 mb-4">Connect</p>
+              <p :class="isDark ? 'text-gray-500' : 'text-slate-500'" class="mb-4 text-xs uppercase tracking-widest">Connect</p>
               <div class="grid grid-cols-2 gap-3">
-                <a v-for="social in socials" :key="social.name" :href="social.url"
-                  class="flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-slate-800/50 px-4 py-3 transition-all hover:bg-slate-800">
+                <a
+                  v-for="social in socials"
+                  :key="social.name"
+                  :href="social.url"
+                  :class="isDark
+                    ? 'border-white/10 bg-slate-800/50 text-gray-300 hover:bg-slate-800'
+                    : 'border-slate-300 bg-slate-100 text-slate-800 hover:bg-slate-200'"
+                  class="mobile-menu-card flex items-center justify-center gap-2 rounded-lg border px-4 py-3 transition-all"
+                >
                   <SocialIcon :icon="social.icon" :name="social.name" />
-                  <span class="text-xs text-gray-400">{{ social.name }}</span>
+                  <span :class="isDark ? 'text-gray-400' : 'text-slate-700'" class="text-xs">{{ social.name }}</span>
                 </a>
               </div>
             </div>
