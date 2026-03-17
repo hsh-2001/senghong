@@ -9,17 +9,18 @@ export const usePortfolioData = () => {
     title: 'Full Stack Developer',
     bio: 'Specialized in building scalable, high-performance applications with modern technologies. Passionate about clean code, system design, and creating exceptional user experiences.',
     socials: [
-      { name: 'LinkedIn', icon: '💼', url: 'https://www.linkedin.com/in/hang-senghong-158674383' },
-      { name: 'X', icon: '✘', url: 'https://x.com/Hongprogrammer' },
-      { name: 'Email', icon: '📧', url: 'mailto:senghonghang@gmail.com' },
+      { name: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/hang-senghong-158674383' },
+      { name: 'X', icon: 'x', url: 'https://x.com/Hongprogrammer' },
+      { name: 'Telegram', icon: 'telegram', url: 'https://t.me/senghongH' },
+      { name: 'Email', icon: 'email', url: 'mailto:senghonghang@gmail.com' },
     ] as Social[],
   };
 
   const navLinks: NavLink[] = [
     { id: 'hero', label: 'Home' },
-    { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
+    { id: 'skills', label: 'Skills' },
     { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -190,7 +191,11 @@ export const usePortfolioData = () => {
       company: 'Technovage Solution Co., Ltd',
       location: 'Samrong Andet 2, Borey Piphup Thmey, 01 St.13, Phnom Penh ',
       period: 'January, 2023 - April 2023',
-      description: 'Developed and maintained multiple client-facing applications. Implemented RESTful APIs, database optimization, and responsive frontend interfaces. Collaborated with cross-functional teams in Agile environment.',
+      description: [
+        'Developed and maintained multiple client-facing applications.',
+        'Implemented RESTful APIs, database optimization, and responsive frontend interfaces.',
+        'Collaborated with cross-functional teams in an Agile environment.',
+      ],
       technologies: ['Flutter', 'Laravel'],
     },
     {
@@ -199,7 +204,9 @@ export const usePortfolioData = () => {
       company: 'Technovage Solution Co., Ltd',
       location: 'Samrong Andet 2, Borey Piphup Thmey, 01 St.13, Phnom Penh ',
       period: 'January 2023 - April 2023',
-      description: 'Testing Website, Mobile App, all platforms',
+      description: [
+        'Tested websites and mobile applications across platforms.',
+      ],
       technologies: [''],
     },
     {
@@ -208,7 +215,9 @@ export const usePortfolioData = () => {
       company: 'Technovage Solution Co., Ltd',
       location: 'Samrong Andet 2, Borey Piphup Thmey, 01 St.13, Phnom Penh ',
       period: ' January 2021 - October, 2021',
-      description: 'Support and maintenance SOP system',
+      description: [
+        'Supported and maintained the SOP system.',
+      ],
       technologies: ['PHP', 'CodeIgniter', 'JavaScript', 'Ajax', 'Bootstrap', 'CSS'],
     },
   ];

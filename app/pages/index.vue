@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen bg-slate-950 text-white overflow-x-hidden">
-    <AnimatedBackground />
+  <div class="theme-page min-h-screen overflow-x-hidden">
+    <!-- <AnimatedBackground /> -->
 
     <Navigation
       :developer-name="developer.name"
@@ -8,7 +8,7 @@
       :socials="developer.socials"
     />
 
-    <HeroSection
+    <HeroSectionTwo
       :name="developer.name"
       :title="developer.title"
       :bio="developer.bio"
@@ -16,14 +16,14 @@
       :profile-image="profileImage" />
 
     <StatsCounter />
-
+    
+    <ProjectsSection :projects="projects" />
+    
+    <ExperienceTimeline :experience="experience" />
+    
     <TechStack
       :tech-stack="techStack"
     />
-
-    <ProjectsSection :projects="projects" />
-
-    <ExperienceTimeline :experience="experience" />
 
     <StudyBackground :education="education" />
 
@@ -36,7 +36,6 @@
 <script setup lang="ts">
 import AnimatedBackground from '~/components/portfolio/AnimatedBackground.vue';
 import Navigation from '~/components/portfolio/Navigation.vue';
-import HeroSection from '~/components/portfolio/HeroSection.vue';
 import StatsCounter from '~/components/portfolio/StatsCounter.vue';
 import TechStack from '~/components/portfolio/TechStack.vue';
 import ProjectsSection from '~/components/portfolio/ProjectsSection.vue';
@@ -45,6 +44,7 @@ import StudyBackground from '~/components/portfolio/StudyBackground.vue';
 import ContactSection from '~/components/portfolio/ContactSection.vue';
 import Footer from '~/components/portfolio/TheFooter.vue';
 import { usePortfolioData } from '~/composables/usePortfolioData';
+import HeroSectionTwo from '~/components/portfolio/HeroSectionTwo.vue';
 
 const {
   profileImage,
@@ -139,44 +139,22 @@ useHead({
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
-* {
-  font-family: 'Nunito', 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  letter-spacing: 0.01em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #06b6d4, #2563eb);
+  background: rgba(255, 255, 255, 0.22);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #22d3ee, #3b82f6);
+  background: rgba(255, 255, 255, 0.34);
 }
 
 /* Hover effects */

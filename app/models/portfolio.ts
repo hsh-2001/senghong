@@ -36,7 +36,7 @@ export interface Experience {
   company: string;
   location: string;
   period: string;
-  description: string | string[];
+  description: string[];
   technologies: string[];
 }
 

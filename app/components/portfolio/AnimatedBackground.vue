@@ -1,33 +1,12 @@
 <template>
-  <div class="fixed inset-0 overflow-hidden pointer-events-none">
-    <!-- Grid pattern -->
-    <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+  <div class="pointer-events-none fixed inset-0 overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,#020202_0%,#0a0a0a_55%,#111111_100%)]"></div>
+    <div class="absolute inset-0 subtle-grid opacity-40"></div>
 
-    <!-- Animated gradient orbs -->
-    <div
-      class="absolute top-0 -left-40 w-96 h-96 bg-cyan-500/30 rounded-full mix-blend-multiply filter blur-3xl animate-float">
-    </div>
-    <div
-      class="absolute top-40 -right-40 w-96 h-96 bg-blue-500/30 rounded-full mix-blend-multiply filter blur-3xl animate-float-delayed">
-    </div>
-    <div
-      class="absolute -bottom-20 left-1/2 w-96 h-96 bg-purple-500/30 rounded-full mix-blend-multiply filter blur-3xl animate-float-slow">
-    </div>
+    <div class="ambient-glow ambient-glow-left"></div>
+    <div class="ambient-glow ambient-glow-right"></div>
 
-    <!-- Scanning line -->
-    <div
-      class="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-cyan-500 to-transparent animate-scan">
-    </div>
-
-    <!-- Floating particles -->
-    <div class="absolute inset-0">
-      <div v-for="i in 20" :key="i" class="absolute w-1 h-1 bg-cyan-400/20 rounded-full animate-particle" :style="{
-        left: Math.random() * 100 + '%',
-        top: Math.random() * 100 + '%',
-        animationDelay: Math.random() * 5 + 's',
-        animationDuration: (Math.random() * 3 + 2) + 's'
-      }"></div>
-    </div>
+    <div class="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent"></div>
   </div>
 </template>
 
@@ -35,93 +14,47 @@
 </script>
 
 <style scoped>
-.bg-grid-pattern {
+.subtle-grid {
   background-image:
-    linear-gradient(to right, rgba(6, 182, 212, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 92%);
 }
 
-@keyframes scan {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
+.ambient-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.22;
+  animation: drift 16s ease-in-out infinite;
 }
 
-.animate-scan {
-  animation: scan 3s linear infinite;
+.ambient-glow-left {
+  top: 4rem;
+  left: -8rem;
+  height: 22rem;
+  width: 22rem;
+  background: rgba(255, 255, 255, 0.08);
 }
 
-@keyframes float {
+.ambient-glow-right {
+  right: -7rem;
+  bottom: 8rem;
+  height: 20rem;
+  width: 20rem;
+  background: rgba(255, 255, 255, 0.06);
+  animation-delay: 2s;
+}
 
+@keyframes drift {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 
   50% {
-    transform: translateY(-20px);
+    transform: translate3d(0, -18px, 0) scale(1.04);
   }
-}
-
-@keyframes float-delayed {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes float-slow {
-
-  0%,
-  100% {
-    transform: translateY(0px) translateX(0px);
-  }
-
-  50% {
-    transform: translateY(-10px) translateX(10px);
-  }
-}
-
-@keyframes particle {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: translateY(-100px) scale(0);
-    opacity: 0;
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: float-delayed 5s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.animate-float-slow {
-  animation: float-slow 8s ease-in-out infinite;
-}
-
-.animate-particle {
-  animation: particle 3s ease-in infinite;
 }
 </style>

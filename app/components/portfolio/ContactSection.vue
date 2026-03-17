@@ -1,44 +1,52 @@
 <template>
-  <section id="contact" class="relative py-24 px-6">
-    <div class="max-w-4xl mx-auto text-center">
+  <section id="contact" class="relative px-3 py-24 sm:px-6">
+    <div class="max-w-7xl mx-auto">
       <div class="animate-fade-in">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          <span class="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Let's Work
-            Together</span>
-        </h2>
-        <p class="text-xl text-gray-400 mb-4">
-          Have a project in mind? Let's build something amazing.
-        </p>
-        <p class="text-gray-500 mb-12">
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-        </p>
+        <div class="mx-auto mb-14 max-w-3xl text-center">
+          <h2 class="mb-6 text-4xl font-bold md:text-5xl">
+            <span class="text-white">Contact Me</span>
+          </h2>
+          <p class="text-lg text-slate-400">
+            Open to discussing product work, freelance opportunities, and new collaborations.
+          </p>
+        </div>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12" >
+        <div class="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+          <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_16px_50px_-30px_rgba(15,23,42,0.9)]">
+            <p class="text-sm font-medium text-slate-300">Let&apos;s build something useful</p>
+            <h3 class="mt-3 text-3xl font-semibold text-white">Start a conversation.</h3>
+            <p class="mt-4 leading-7 text-slate-400">
+              Share your idea, project scope, or current challenge. I&apos;ll review it and get back to you as soon as possible.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3">
+              <a v-for="social in socials" :key="social.name" :href="social.url"
+                class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-200 transition hover:bg-white/10">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200">
+                  <SocialIcon :icon="social.icon" :name="social.name" />
+                </span>
+                <span class="text-sm font-medium">{{ social.name }}</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_16px_50px_-30px_rgba(15,23,42,0.9)]">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8" >
           <a v-if="isFirebaseDomain" @click="openCloudFlareSite"
-            class="group px-8 py-4 bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105">
-            <!-- <svg class="w-6 h-6 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg> -->
+            class="flex items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-slate-950 transition hover:bg-slate-100">
             Contact Me
           </a>
-          <!-- <a href="#"
-            class="px-8 py-4 border border-cyan-500/30 hover:border-cyan-500 rounded-lg font-semibold transition-all duration-300 hover:bg-cyan-500/10 flex items-center justify-center gap-3">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
+          <!-- <a href="/files/Hang_Senghong_Fullstack_developer_CV.pdf" download
+            class="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white/10">
             Download CV
           </a> -->
         </div>
 
-        <!-- Contact Form -->
-        <div v-if="!isFirebaseDomain" class="max-w-2xl mx-auto my-16" id="contact">
+        <div v-if="!isFirebaseDomain" class="mx-auto" id="contact">
           <form @submit.prevent="handleSubmit" class="space-y-6">
             <div class="grid md:grid-cols-2 gap-6">
-              <!-- Name Input -->
               <div class="text-left">
-                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
+                <label for="name" class="mb-2 block text-sm font-medium text-slate-300">
                   Name <span class="text-red-500">*</span>
                 </label>
                 <input
@@ -46,14 +54,13 @@
                   v-model="formData.name"
                   type="text"
                   required
-                  class="w-full px-4 py-3 bg-gray-900/50 border border-cyan-500/30 rounded-lg focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500"
+                  class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-white/20"
                   placeholder="Your name"
                 />
               </div>
 
-              <!-- Email Input -->
               <div class="text-left">
-                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">
+                <label for="email" class="mb-2 block text-sm font-medium text-slate-300">
                   Email <span class="text-red-500">*</span>
                 </label>
                 <input
@@ -61,15 +68,14 @@
                   v-model="formData.email"
                   type="email"
                   required
-                  class="w-full px-4 py-3 bg-gray-900/50 border border-cyan-500/30 rounded-lg focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500"
+                  class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-white/20"
                   placeholder="your.email@example.com"
                 />
               </div>
             </div>
 
-            <!-- Subject Input -->
             <div class="text-left">
-              <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">
+              <label for="subject" class="mb-2 block text-sm font-medium text-slate-300">
                 Subject <span class="text-red-500">*</span>
               </label>
               <input
@@ -77,14 +83,13 @@
                 v-model="formData.subject"
                 type="text"
                 required
-                class="w-full px-4 py-3 bg-gray-900/50 border border-cyan-500/30 rounded-lg focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500"
+                class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-white/20"
                 placeholder="What's this about?"
               />
             </div>
 
-            <!-- Message Input -->
             <div class="text-left">
-              <label for="message" class="block text-sm font-medium text-gray-300 mb-2">
+              <label for="message" class="mb-2 block text-sm font-medium text-slate-300">
                 Message <span class="text-red-500">*</span>
               </label>
               <textarea
@@ -92,17 +97,16 @@
                 v-model="formData.message"
                 required
                 rows="6"
-                class="w-full px-4 py-3 bg-gray-900/50 border border-cyan-500/30 rounded-lg focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500 resize-none"
+                class="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-white/20"
                 placeholder="Tell me about your project or idea..."
               ></textarea>
             </div>
 
-            <!-- Submit Button -->
             <div>
               <button
                 type="submit"
                 :disabled="isSubmitting"
-                class="w-full px-8 py-4 bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3"
+                class="flex w-full items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-slate-950 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <svg v-if="!isSubmitting" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -116,24 +120,16 @@
               </button>
             </div>
 
-            <!-- Success Message -->
-            <div v-if="submitSuccess" class="p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
-              <p class="text-green-400 text-center">✓ Message sent successfully! I'll get back to you soon.</p>
+            <div v-if="submitSuccess" class="rounded-xl border border-white/10 bg-white/5 p-4">
+              <p class="text-center text-slate-200">✓ Message sent successfully! I'll get back to you soon.</p>
             </div>
 
-            <!-- Error Message -->
-            <div v-if="submitError" class="p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
-              <p class="text-red-400 text-center">✗ {{ submitError }}</p>
+            <div v-if="submitError" class="rounded-xl border border-white/10 bg-white/5 p-4">
+              <p class="text-center text-slate-200">✗ {{ submitError }}</p>
             </div>
           </form>
         </div>
-
-        <!-- Social Links -->
-        <div class="flex justify-center gap-4">
-          <a v-for="social in socials" :key="social.name" :href="social.url"
-            class="w-14 h-14 border border-cyan-500/30 hover:border-cyan-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-cyan-500/10 hover:scale-110">
-            <span class="text-2xl">{{ social.icon }}</span>
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -142,6 +138,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
+import SocialIcon from './SocialIcon.vue';
 
 const isFirebaseDomain = computed(() => window?.origin.includes('senghong-portfolio.web.app'));
 

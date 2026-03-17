@@ -1,12 +1,12 @@
 <template>
-  <footer class="relative py-8 px-6 border-t border-cyan-500/20">
+  <footer class="relative px-3 py-10 sm:px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        <div class="text-gray-500 text-sm">
-          <span>© {{ currentYear }} {{ developerName }}. </span>
+      <div class="flex flex-col items-center justify-between gap-4 rounded-3xl border border-white/10 bg-slate-900/70 px-6 py-5 text-center md:flex-row md:text-left">
+        <div class="text-sm text-slate-500">
+          <span>© {{ currentYear }} {{ developerName }}.</span>
         </div>
-        <div class="flex gap-6 text-sm text-gray-500 text-center">
-          <p>Build with Vue.js & Tailwind CSS 🤝 contribute with AI</p>
+        <div class="flex gap-6 text-center text-sm text-slate-500">
+          <p>Built with Vue.js, Nuxt, and Tailwind CSS.</p>
         </div>
       </div>
     </div>

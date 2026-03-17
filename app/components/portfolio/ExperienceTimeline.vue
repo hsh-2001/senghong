@@ -1,59 +1,40 @@
 <template>
-  <section id="experience" class="relative py-24 px-6">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16 animate-fade-in">
+  <section id="experience" class="relative px-3 py-24 sm:px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="mx-auto mb-14 max-w-3xl text-center animate-fade-in">
         <h2 class="text-4xl md:text-5xl font-bold mb-4">
-          <span class="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Experience</span>
+          <span class="text-white">Experience</span>
         </h2>
-        <p class="text-gray-400 text-lg">My professional journey</p>
+        <p class="text-lg text-slate-400">Roles and projects that shaped how I build, test, and ship software.</p>
       </div>
 
-      <div class="relative">
-        <!-- Timeline Line -->
-        <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-linear-to-b from-cyan-500 to-blue-600 hidden md:block">
-        </div>
-
-        <div class="space-y-12">
-          <div v-for="(exp, index) in experience" :key="exp.id" class="relative pl-0 md:pl-20 animate-fade-in"
-            :style="{ animationDelay: `${index * 150}ms` }">
-            <!-- Timeline Dot -->
-            <div
-              class="absolute left-6 top-0 w-5 h-5 bg-cyan-500 rounded-full border-4 border-slate-950 hidden md:block">
+      <div class="space-y-6">
+        <article v-for="(exp, index) in experience" :key="exp.id"
+          class="animate-fade-in rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_16px_50px_-30px_rgba(15,23,42,0.9)]"
+          :style="{ animationDelay: `${index * 120}ms` }">
+          <div class="mb-5 flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p class="text-sm font-medium text-slate-300">{{ exp.company }}</p>
+              <h3 class="mt-2 text-2xl font-semibold text-white">{{ exp.position }}</h3>
+              <p class="mt-1 text-sm text-slate-500">{{ exp.location }}</p>
             </div>
-
-            <div
-              class="bg-slate-900/50 backdrop-blur-sm border border-cyan-500/20 hover:border-cyan-500/50 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
-              <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
-                <div>
-                  <h3 class="text-2xl font-bold text-white mb-2">{{ exp.position }}</h3>
-                  <p class="text-cyan-400 font-semibold mb-1">{{ exp.company }}</p>
-                  <p class="text-gray-500 text-sm">{{ exp.location }}</p>
-                </div>
-                <span class="px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">
-                  {{ exp.period }}
-                </span>
-              </div>
-              <div class="text-gray-400 leading-relaxed mb-4">
-                <template v-if="Array.isArray(exp.description)">
-                  <ul class="list-disc pl-5 space-y-1">
-                    <li v-for="(desc, i) in exp.description" :key="i">
-                      {{ desc }}
-                    </li>
-                  </ul>
-                </template>
-                <template v-else>
-                  <p>{{ exp.description }}</p>
-                </template>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span v-for="tech in exp.technologies" :key="tech"
-                  class="px-3 py-1 bg-slate-800 text-gray-300 rounded-full text-xs">
+            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
+              {{ exp.period }}
+            </span>
+          </div>
+          <div class="mb-5 text-slate-400 leading-7">
+            <ul class="space-y-2">
+              <li v-for="(desc, i) in exp.description" :key="i">
+                - {{ desc }}
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-wrap gap-2">
+                <span v-for="tech in exp.technologies" :key="tech" class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-300">
                   {{ tech }}
                 </span>
-              </div>
-            </div>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -66,7 +47,7 @@ interface Experience {
   company: string;
   location: string;
   period: string;
-  description: string | string[];
+  description: string[];
   technologies: string[];
 }
 

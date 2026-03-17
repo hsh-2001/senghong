@@ -1,51 +1,26 @@
 <template>
-  <section class="relative py-16 px-6">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-        <div
-          class="relative bg-slate-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 text-center group hover:border-cyan-500/50 transition-all duration-300 overflow-hidden">
-          <div
-            class="absolute inset-0 bg-linear-to-br from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+  <section class="relative px-3 py-16 sm:px-6">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article v-for="item in stats" :key="item.label"
+          class="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_16px_50px_-30px_rgba(15,23,42,0.9)]">
+          <p class="text-sm font-medium text-slate-400">{{ item.label }}</p>
+          <div class="mt-4 flex items-end justify-between gap-4">
+            <p class="text-4xl font-bold text-white">{{ item.value }}</p>
+            <span class="rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">
+              {{ item.note }}
+            </span>
           </div>
-          <div class="relative z-10">
-            <div class="text-4xl font-bold text-cyan-400 mb-2">20+</div>
-            <div class="text-sm text-gray-400">Projects Completed</div>
-          </div>
-        </div>
-        <div
-          class="relative bg-slate-900/30 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-6 text-center group hover:border-blue-500/50 transition-all duration-300 overflow-hidden">
-          <div
-            class="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-          <div class="relative z-10">
-            <div class="text-4xl font-bold text-blue-400 mb-2">3+</div>
-            <div class="text-sm text-gray-400">Years Experience on jobs</div>
-          </div>
-        </div>
-        <!-- <div
-          class="relative bg-slate-900/30 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-6 text-center group hover:border-purple-500/50 transition-all duration-300 overflow-hidden">
-          <div
-            class="absolute inset-0 bg-linear-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-          <div class="relative z-10">
-            <div class="text-4xl font-bold text-purple-400 mb-2">30+</div>
-            <div class="text-sm text-gray-400">Happy Clients</div>
-          </div>
-        </div> -->
-        <div
-          class="relative bg-slate-900/30 backdrop-blur-sm border border-pink-500/20 rounded-2xl p-6 text-center group hover:border-pink-500/50 transition-all duration-300 overflow-hidden">
-          <div
-            class="absolute inset-0 bg-linear-to-br from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-          </div>
-          <div class="relative z-10">
-            <div class="text-4xl font-bold text-pink-400 mb-2">10+</div>
-            <div class="text-sm text-gray-400">Tech Stacks</div>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+const stats = [
+  { value: '20+', label: 'Projects Completed', note: 'Delivered' },
+  { value: '3+', label: 'Years of Experience', note: 'Production' },
+  { value: '10+', label: 'Tech Stacks', note: 'Daily Use' },
+];
 </script>
