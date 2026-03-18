@@ -69,7 +69,7 @@ export const usePortfolioData = () => {
       status: 'Live',
       github: 'https://github.com/Senghong-2025/tmr',
       demo: 'https://trm-7pr.pages.dev',
-      background: '/projects/trm.jpg'
+      background: '/projects/trm.png'
     },
     {
       id: 3,
