@@ -63,12 +63,12 @@ export const usePortfolioData = () => {
       id: 2,
       name: 'Transaction list manangement',
       description: 'Scalable messaging platform with real-time communication, file sharing, and video calls. Built using SignalR and Firebase for instant updates.',
-      technologies: ['Nuxt & TS', 'Firebase', 'Tailwind', 'Cloudflare'],
+      technologies: ['Nuxt & TS', 'PostgreSQL/ Neon', 'Tailwind', 'Cloudflare'],
       gradient: 'bg-linear-to-br from-purple-600 to-pink-500',
       icon: '💸',
       status: 'Live',
       github: 'https://github.com/Senghong-2025/tmr',
-      demo: 'https://trm-7pr.pages.dev',
+      demo: 'https://tmr-6ru.pages.dev/',
       background: '/projects/trm.png'
     },
     {
