@@ -151,6 +151,24 @@ export const usePortfolioData = () => {
       "github": "https://github.com/hsh-2001/hrms",
       "demo": "https://hrms.senghong-learning.workers.dev",
       "background": "/projects/hrms.png",
+    },
+    {
+      "id": 8,
+      "name": "Coffee Shop Management System",
+      "description": "A full-featured Coffee Shop Management System built with Nuxt Full Stack with PostgreSQL / Neon as Server. It includes inventory management, order processing, customer management, and reporting features to streamline coffee shop operations.\n And here is testing account\n Username: admin\nPassword: admin123",
+      "technologies": [
+        "Nuxt",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Neon",
+        "REST API",
+      ],
+      "gradient": "bg-linear-to-br from-green-600 to-blue-500",
+      "icon": "☕",
+      "status": "Live",
+      "github": "https://github.com/hsh-2001/mini-shop",
+      "demo": "https://demo-coffee-sh.vercel.app/",
+      "background": "/projects/mini-shop.png",
     }
   ];
 
