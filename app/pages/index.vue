@@ -58,7 +58,7 @@ const {
 
 const siteUrl = 'https://senghong-portfolio.web.app';
 const title = 'Hang Senghong - Full Stack Developer';
-const description = 'Full Stack Developer specializing in Vue.js, Nuxt.js, NestJS, ExpresJS, .NET Core, SQL, NoSQL and modern web technologies. Building scalable, high-performance applications with clean code and exceptional user experiences.'
+const description = 'Full Stack Developer specializing in Vue.js, Nuxt.js, NestJS, Express.js, .NET Core, SQL, NoSQL and modern web technologies. Building scalable applications that help businesses grow, improve operational efficiency, and deliver better user experiences.'
 
 useHead({
   title,
@@ -99,7 +99,7 @@ useHead({
           'https://github.com/Senghong-2025',
           'https://senghong.pages.dev',
         ],
-        description: 'Full Stack Developer specializing in building scalable, high-performance applications with modern technologies.',
+        description: 'Full Stack Developer specializing in building scalable applications that help businesses grow, improve operational efficiency, and deliver better user experiences.',
         knowsAbout: [
           'Vue.js',
           'Nuxt.js',

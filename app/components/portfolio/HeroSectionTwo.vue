@@ -18,7 +18,7 @@
 
         <h1 class="mt-4 max-w-3xl text-5xl font-bold leading-tight text-white sm:text-6xl">
           Hi, I'm {{ name }}.
-          <span class="block text-slate-300">I build modern web applications.</span>
+          <span class="block text-slate-300">I build scalable apps that help businesses grow.</span>
         </h1>
 
         <p class="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
@@ -78,7 +78,7 @@
               <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Focus</p>
                 <p class="mt-2 text-sm leading-6 text-slate-300">
-                  Clean UI, scalable architecture, and practical product delivery.
+                  Scalable architecture, efficient workflows, and user-focused product delivery.
                 </p>
               </div>
               <div class="rounded-2xl border border-white/10 bg-white/5 p-4">

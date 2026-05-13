@@ -7,7 +7,7 @@ export const usePortfolioData = () => {
   const developer = {
     name: 'Hang Senghong',
     title: 'Full Stack Developer',
-    bio: 'Specialized in building scalable, high-performance applications with modern technologies. Passionate about clean code, system design, and creating exceptional user experiences.',
+    bio: 'I build modern, scalable web applications that help businesses grow, improve operational efficiency, and deliver better user experiences. When I join a company, I focus on practical software that creates real value for users and supports long-term business success.',
     socials: [
       { name: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/hang-senghong-158674383' },
       { name: 'X', icon: 'x', url: 'https://x.com/Hongprogrammer' },
