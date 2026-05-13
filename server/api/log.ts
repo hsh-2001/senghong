@@ -1,34 +1,76 @@
-import db from '../utils/db';
+import db from '../utils/db'
+import { getRequestIP, getRequestHeader, isMethod } from 'h3'
+
 export default defineEventHandler(async (event) => {
     if (isMethod(event, 'POST')) {
-        const ip = await event.node.req.headers['cf-connecting-ip'] ||
-            getRequestIP(event, { xForwardedFor: true }) ||
-            'Unknown'
-        const action = "Visit";
-        const userAgent = event.req.headers['user-agent'] || 'Unknown';
-        const device = /mobile/i.test(userAgent) ? 'Mobile' : 'Desktop';
-        const agent = userAgent;
-        const geo = await getLocationByIp(ip);
-        const safeGeo = geo ?? null;
-        await db.query(
-            `INSERT INTO action_log (action, ip, device, agent, geo) VALUES ($1, $2, $3, $4, $5)`,
-            [action, ip, device, agent, safeGeo]
-        )
-        return { ok: true };
+        try {
+            const ip =
+                (event.node.req.headers['cf-connecting-ip'] as string) ||
+                getRequestIP(event, { xForwardedFor: true }) ||
+                'Unknown'
+
+            const action = 'Visit'
+
+            const userAgent =
+                getRequestHeader(event, 'user-agent') || 'Unknown'
+
+            const device = /mobile/i.test(userAgent) ? 'Mobile' : 'Desktop'
+
+            let geo = null
+
+            if (ip !== 'Unknown') {
+                geo = await getLocationByIp(ip)
+            }
+
+            await db.query(
+                `INSERT INTO action_log (action, ip, device, agent, geo)
+                VALUES ($1, $2, $3, $4, $5)`,
+                [
+                    action,
+                    ip,
+                    device,
+                    userAgent,
+                    geo ? JSON.stringify(geo) : null
+                ]
+            )
+
+            return { ok: true }
+        } catch (err) {
+            console.error(err)
+            return { ok: false }
+        }
     }
+
     if (isMethod(event, 'GET')) {
-        const logs = await db.query('SELECT * FROM action_log ORDER BY timestamp DESC');
-        return { logs };
+        try {
+            const logs = await db.query(
+                'SELECT * FROM action_log ORDER BY timestamp DESC'
+            )
+            return { logs }
+        } catch (err) {
+            console.error(err)
+            return { logs: [] }
+        }
     }
-});
+
+    return { error: 'Method not allowed' }
+})
 
 const getLocationByIp = async (ip: string) => {
     try {
-        const response = await $fetch(`https://ipapi.co/${ip}/json/`)
-        console.log('Location for IP', ip, response)
-        return response
-    } catch (err) {
-        console.error('Failed to get location for IP:', ip, err)
+        const res: any = await $fetch(`https://ipapi.co/${ip}/json/`)
+
+        if (!res || res.error) return null
+
+        return {
+            country: res.country_name,
+            countryCode: res.country,
+            city: res.city,
+            region: res.region,
+            latitude: res.latitude,
+            longitude: res.longitude
+        }
+    } catch {
         return null
     }
 }

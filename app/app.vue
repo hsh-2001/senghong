@@ -20,9 +20,7 @@ useHead({
 });
 
 const { logAction } = useActionLog();
-
-onBeforeMount(() => {
+onMounted(() => {
   logAction();
 });
-
 </script>
