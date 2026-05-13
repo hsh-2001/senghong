@@ -1,0 +1,8 @@
+CREATE TABLE action_log (
+    id SERIAL PRIMARY KEY,
+    action VARCHAR(255) NOT NULL,
+    ip VARCHAR(45) NOT NULL,
+    device VARCHAR(255) NOT NULL,
+    agent VARCHAR(255) NOT NULL,
+    timestamp TIMESTAMPTZ DEFAULT NOW()
+);

@@ -1,4 +1,3 @@
-
 <template>
   <NuxtPage />
 </template>
@@ -20,13 +19,10 @@ useHead({
   ],
 });
 
-onMounted(async () => {
-  try {
-    await $fetch('/api/notify', {
-      method: 'POST',
-    });
-  } catch (err) {
-    console.error('Notify failed', err);
-  }
+const { logAction } = useActionLog();
+
+onBeforeMount(() => {
+  logAction('visit');
 });
+
 </script>

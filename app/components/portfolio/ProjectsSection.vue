@@ -50,7 +50,7 @@
                   {{ project.name }}
                 </h3>
 
-                <p class="mt-3 line-clamp-3 min-h-[4.5rem] text-sm leading-6 text-slate-400">
+                <p class="mt-3 min-h-[4.5rem] whitespace-pre-line text-sm leading-6 text-slate-400">
                   {{ project.description }}
                 </p>
 
@@ -138,7 +138,7 @@
                 {{ project.name }}
               </h3>
 
-              <p class="mt-3 line-clamp-3 min-h-[4.5rem] text-sm leading-6 text-slate-400">
+              <p class="mt-3 min-h-[4.5rem] whitespace-pre-line text-sm leading-6 text-slate-400">
                 {{ project.description }}
               </p>
 
