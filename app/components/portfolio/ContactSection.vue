@@ -1,8 +1,8 @@
 <template>
   <section id="contact" class="relative px-3 py-24 sm:px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="animate-fade-in">
-        <div class="mx-auto mb-14 max-w-3xl text-center">
+      <div>
+        <div class="contact-heading-reveal mx-auto mb-14 max-w-3xl text-center">
           <h2 class="mb-6 text-4xl font-bold md:text-5xl">
             <span class="text-white">Contact Me</span>
           </h2>
@@ -12,7 +12,8 @@
         </div>
 
         <div class="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-          <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_16px_50px_-30px_rgba(15,23,42,0.9)]">
+          <div
+            class="contact-panel-reveal contact-panel-from-left rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_16px_50px_-30px_rgba(15,23,42,0.9)]">
             <p class="text-sm font-medium text-slate-300">Let&apos;s build something useful</p>
             <h3 class="mt-3 text-3xl font-semibold text-white">Start a conversation.</h3>
             <p class="mt-4 leading-7 text-slate-400">
@@ -30,7 +31,8 @@
             </div>
           </div>
 
-          <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_16px_50px_-30px_rgba(15,23,42,0.9)]">
+          <div
+            class="contact-panel-reveal contact-panel-from-right rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_16px_50px_-30px_rgba(15,23,42,0.9)]">
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8" >
           <a v-if="isFirebaseDomain" @click="openCloudFlareSite"
             class="flex items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-slate-950 transition hover:bg-slate-100">
@@ -213,20 +215,43 @@ const handleSubmit = async () => {
 </script>
 
 <style scoped>
-@keyframes fade-in {
+@keyframes contact-reveal {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    filter: blur(8px);
+    transform: translate3d(var(--contact-x, 0), 28px, 0);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
+.contact-heading-reveal,
+.contact-panel-reveal {
   opacity: 0;
+  animation: contact-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.contact-panel-from-left {
+  --contact-x: -24px;
+  animation-delay: 100ms;
+}
+
+.contact-panel-from-right {
+  --contact-x: 24px;
+  animation-delay: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-heading-reveal,
+  .contact-panel-reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none;
+  }
 }
 </style>

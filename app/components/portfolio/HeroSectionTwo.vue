@@ -5,7 +5,7 @@
     </div>
 
     <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
-      <div>
+      <div class="hero-reveal hero-reveal-from-left">
         <div
           class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200">
           <span class="h-2.5 w-2.5 rounded-full bg-white"></span>
@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <div class="flex justify-center lg:justify-end">
+      <div class="hero-reveal hero-reveal-from-right hero-reveal-delay-1 flex justify-center lg:justify-end">
         <div class="relative w-full max-w-md">
           <div class="absolute inset-0 rounded-[2rem] bg-white/5 blur-3xl"></div>
 
@@ -141,6 +141,39 @@ const scrollToSection = (id: string) => {
 </script>
 
 <style scoped>
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 28px), 0);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: hero-reveal 720ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-reveal-from-left {
+  --reveal-x: -28px;
+  --reveal-y: 0;
+}
+
+.hero-reveal-from-right {
+  --reveal-x: 28px;
+  --reveal-y: 0;
+}
+
+.hero-reveal-delay-1 {
+  animation-delay: 120ms;
+}
+
 .hero-profile-caption {
   background: linear-gradient(180deg, transparent 0%, rgba(2, 2, 2, 0.4) 24%, rgba(2, 2, 2, 0.82) 100%);
 }
@@ -167,5 +200,14 @@ const scrollToSection = (id: string) => {
 
 :global(html[data-theme='light']) .hero-profile-name {
   color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none;
+  }
 }
 </style>

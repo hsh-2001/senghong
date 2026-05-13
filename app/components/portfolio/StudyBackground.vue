@@ -1,7 +1,7 @@
 <template>
   <section id="education" class="relative px-3 py-24 sm:px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="mx-auto mb-14 max-w-3xl text-center animate-fade-in">
+      <div class="education-heading-reveal mx-auto mb-14 max-w-3xl text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-4">
           <span class="text-white">Education</span>
         </h2>
@@ -10,7 +10,7 @@
 
       <div class="space-y-6">
         <article v-for="(edu, index) in education" :key="edu.id"
-          class="animate-fade-in rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_16px_50px_-30px_rgba(15,23,42,0.9)]"
+          class="education-card-reveal rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_16px_50px_-30px_rgba(15,23,42,0.9)]"
           :style="{ animationDelay: `${index * 120}ms` }">
           <div class="mb-5 flex flex-wrap items-start justify-between gap-4">
             <div>
@@ -62,20 +62,33 @@ defineProps<Props>();
 </script>
 
 <style scoped>
-@keyframes fade-in {
+@keyframes education-reveal {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    filter: blur(8px);
+    transform: translateY(28px);
   }
 
   to {
     opacity: 1;
+    filter: blur(0);
     transform: translateY(0);
   }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
+.education-heading-reveal,
+.education-card-reveal {
   opacity: 0;
+  animation: education-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .education-heading-reveal,
+  .education-card-reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none;
+  }
 }
 </style>

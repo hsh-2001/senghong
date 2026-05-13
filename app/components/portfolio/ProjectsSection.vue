@@ -1,7 +1,7 @@
 <template>
   <section id="projects" class="relative px-0 py-24 sm:px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="px-3 mb-14 animate-fade-in sm:px-0">
+      <div class="projects-heading-reveal px-3 mb-14 sm:px-0">
         <div class="mx-auto max-w-3xl text-center">
           <p class="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">Portfolio Work</p>
           <h2 class="mb-4 text-4xl font-bold md:text-5xl">
@@ -15,8 +15,9 @@
         <div class="sm:hidden space-y-6">
           <div ref="mobileSliderRef" class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory mobile-slider"
             @scroll="handleMobileScroll">
-            <article v-for="project in projects" :key="project.id"
-              class="project-card flex min-w-[92%] snap-center flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/70">
+            <article v-for="(project, index) in projects" :key="project.id"
+              class="project-card project-card-reveal flex min-w-[92%] snap-center flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/70"
+              :style="{ animationDelay: `${index * 80}ms` }">
               <div class="relative h-52 overflow-hidden">
                 <img v-if="project.background" :src="project.background" alt="background"
                   class="h-full w-full object-cover" />
@@ -79,7 +80,7 @@
             </article>
           </div>
 
-          <div class="px-3 flex items-center justify-between gap-4 sm:px-0">
+          <div class="projects-controls-reveal px-3 flex items-center justify-between gap-4 sm:px-0">
             <div class="flex items-center gap-2">
               <button v-for="(project, index) in projects" :key="`dot-${project.id}`" type="button"
                 :aria-label="`Go to ${project.name}`" @click="scrollToProject(index)" :class="[
@@ -108,8 +109,9 @@
         </div>
 
         <div class="hidden gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-          <article v-for="project in projects" :key="project.id"
-            class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/70 transition duration-200 hover:border-white/20">
+          <article v-for="(project, index) in projects" :key="project.id"
+            class="project-card-reveal group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/70 transition duration-200 hover:border-white/20"
+            :style="{ animationDelay: `${index * 80}ms` }">
             <div class="relative h-52 overflow-hidden">
               <img v-if="project.background" :src="project.background" alt="background"
                 class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.01]" />
@@ -246,21 +248,47 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-@keyframes fade-in {
+@keyframes projects-fade-up {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    filter: blur(8px);
+    transform: translateY(28px);
   }
 
   to {
     opacity: 1;
+    filter: blur(0);
     transform: translateY(0);
   }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
+@keyframes project-card-reveal {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(18px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.projects-heading-reveal,
+.projects-controls-reveal,
+.project-card-reveal {
   opacity: 0;
+  animation: projects-fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.projects-controls-reveal {
+  animation-delay: 180ms;
+}
+
+.project-card-reveal {
+  animation-name: project-card-reveal;
 }
 
 .mobile-slider {
@@ -272,4 +300,14 @@ onBeforeUnmount(() => {
   display: none;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .projects-heading-reveal,
+  .projects-controls-reveal,
+  .project-card-reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none;
+  }
+}
 </style>
