@@ -22,7 +22,7 @@ useHead({
 const { logAction } = useActionLog();
 
 onBeforeMount(() => {
-  logAction('visit');
+  logAction();
 });
 
 </script>

@@ -20,13 +20,9 @@ export default function useActionLog() {
         return device;
     };
 
-    const logAction = async (action: string) => {
-        const device = getDeviceInfo();
-        const agent = navigator.userAgent;
-        const ip = await $fetch('/api/get-ip');
-        await $fetch('/api/log', {
-            method: 'POST',
-            body: { action, ip, device, agent },
+    const logAction = async () => {
+        await $fetch('/api/log', { method: 'POST',
+            body: {},
         });
     }
 

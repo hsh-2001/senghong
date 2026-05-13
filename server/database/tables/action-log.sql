@@ -4,5 +4,6 @@ CREATE TABLE action_log (
     ip VARCHAR(45) NOT NULL,
     device VARCHAR(255) NOT NULL,
     agent VARCHAR(255) NOT NULL,
+    geo JSONB NULL,
     timestamp TIMESTAMPTZ DEFAULT NOW()
 );
