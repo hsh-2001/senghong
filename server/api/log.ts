@@ -1,3 +1,4 @@
+import { sendTelegramMessage } from './../services/telegramService';
 import db from '../utils/db'
 import { getRequestIP, getRequestHeader, isMethod } from 'h3'
 
@@ -33,6 +34,8 @@ export default defineEventHandler(async (event) => {
                     geo ? JSON.stringify(geo) : null
                 ]
             )
+
+            await sendMessage(ip, device, userAgent, geo)
 
             return { ok: true }
         } catch (err) {
@@ -73,4 +76,21 @@ const getLocationByIp = async (ip: string) => {
     } catch {
         return null
     }
+}
+
+const sendMessage = async (ip: string, device: string, userAgent: string, geo: any) => {
+    const message = `
+🚨 New Visitor Detected
+
+🌐 IP Address: ${ip}
+💻 Device: ${device}
+🧭 User Agent: ${userAgent}
+
+📍 Geo Information:
+${geo ? JSON.stringify(geo, null, 2) : 'Unknown'}
+
+🕒 Time: ${new Date().toLocaleString()}
+`.trim()
+
+    await sendTelegramMessage(message)
 }
