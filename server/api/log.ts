@@ -1,6 +1,6 @@
 import { sendTelegramMessage } from './../services/telegramService';
 import db from '../utils/db'
-import { getRequestIP, getRequestHeader, isMethod } from 'h3'
+import { getRequestIP, getRequestHeader, isMethod, readBody } from 'h3'
 
 export default defineEventHandler(async (event) => {
     if (isMethod(event, 'POST')) {
@@ -17,11 +17,8 @@ export default defineEventHandler(async (event) => {
 
             const device = /mobile/i.test(userAgent) ? 'Mobile' : 'Desktop'
 
-            let geo = null
-
-            if (ip !== 'Unknown') {
-                geo = await getLocationByIp(ip)
-            }
+            const body = await readBody(event).catch(() => ({}))
+            const geo = normalizeGeo(body?.geo)
 
             await db.query(
                 `INSERT INTO action_log (action, ip, device, agent, geo)
@@ -59,22 +56,28 @@ export default defineEventHandler(async (event) => {
     return { error: 'Method not allowed' }
 })
 
-const getLocationByIp = async (ip: string) => {
-    try {
-        const res: any = await $fetch(`https://ipapi.co/${ip}/json/`)
+const normalizeNumber = (value: unknown) => {
+    return typeof value === 'number' && Number.isFinite(value) ? value : null
+}
 
-        if (!res || res.error) return null
+const normalizeGeo = (geo: unknown) => {
+    if (!geo || typeof geo !== 'object') return null
 
-        return {
-            country: res.country_name,
-            countryCode: res.country,
-            city: res.city,
-            region: res.region,
-            latitude: res.latitude,
-            longitude: res.longitude
-        }
-    } catch {
-        return null
+    const location = geo as Record<string, unknown>
+    const latitude = normalizeNumber(location.latitude)
+    const longitude = normalizeNumber(location.longitude)
+
+    if (latitude === null || longitude === null) return null
+
+    return {
+        latitude,
+        longitude,
+        accuracy: normalizeNumber(location.accuracy),
+        altitude: normalizeNumber(location.altitude),
+        altitudeAccuracy: normalizeNumber(location.altitudeAccuracy),
+        heading: normalizeNumber(location.heading),
+        speed: normalizeNumber(location.speed),
+        timestamp: normalizeNumber(location.timestamp)
     }
 }
 
