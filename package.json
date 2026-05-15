@@ -10,9 +10,7 @@
     "postinstall": "nuxt prepare",
     "build:prod": "npx nuxi build --preset=cloudflare_pages",
     "deploy:prod": "npx wrangler pages deploy dist/",
-    "deploy": "npm run build:prod && npm run deploy:prod",
-    "firebase:build": "npm run build -- --preset=firebase",
-    "firebase:deploy": "firebase deploy"
+    "deploy": "npm run build:prod && npm run deploy:prod"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

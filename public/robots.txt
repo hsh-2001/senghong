@@ -8,4 +8,4 @@ Allow: /
 # Disallow: /private/
 
 # Sitemap location
-Sitemap: https://senghong-portfolio.web.app/sitemap.xml
+Sitemap: https://senghong.pages.dev/sitemap.xml

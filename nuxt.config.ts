@@ -10,26 +10,17 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  // nitro: {
-  //   preset: 'static',
-  //   firebase: {
-  //     gen: 2 // Use Firebase Functions Generation 2
-  //   }
-  // },
   nitro: {
     preset: 'cloudflare'
   },
-  ssr: true,
-
+  ssr: false,
   runtimeConfig: {  
     // Private keys (only available on server-side)
     telegramBotToken: import.meta.env.NUXT_TELEGRAM_BOT_TOKEN,
     telegramChatId: import.meta.env.NUXT_TELEGRAM_CHAT_ID,
 
     public: {
-      siteUrl: 'https://senghong-portfolio.web.app',
-      // Alternative domain:
-      // - https://senghong.pages.dev
+      siteUrl: 'https://senghong.pages.dev',
     }
   },
 })

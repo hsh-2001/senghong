@@ -16,7 +16,7 @@
             <div class="flex min-w-0 items-center gap-3">
               <img :src="tech.image" :alt="tech.name" class="h-11 w-11 shrink-0 rounded-xl object-cover bg-white/5 p-2" />
               <div class="min-w-0">
-                <h3 class="break-words text-sm font-semibold text-white sm:text-base">{{ tech.name }}</h3>
+                <h3 class="wrap-break-word text-sm font-semibold text-white sm:text-base">{{ tech.name }}</h3>
                 <p class="text-xs text-slate-500 sm:text-sm">{{ tech.category }}</p>
               </div>
             </div>

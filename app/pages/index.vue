@@ -56,7 +56,7 @@ const {
   education,
 } = usePortfolioData();
 
-const siteUrl = 'https://senghong-portfolio.web.app';
+const siteUrl = 'https://senghong.pages.dev';
 const title = 'Hang Senghong - Full Stack Developer';
 const description = 'Full Stack Developer specializing in Vue.js, Nuxt.js, NestJS, Express.js, .NET Core, SQL, NoSQL and modern web technologies. Building scalable applications that help businesses grow, improve operational efficiency, and deliver better user experiences.'
 
@@ -64,7 +64,7 @@ useHead({
   title,
   meta: [
     { name: 'description', content: description },
-    { name: 'keywords', content: 'Full Stack Developer, Vue.js Developer, Nuxt.js Developer, .NET Core Developer, TypeScript, Firebase, Web Development, Software Engineer, Hang Senghong, Cambodia Developer, Frontend Developer, Backend Developer, Mobile Development, Flutter' },
+    { name: 'keywords', content: 'Full Stack Developer, Vue.js Developer, Nuxt.js Developer, .NET Core Developer, TypeScript, Web Development, Software Engineer, Hang Senghong, Cambodia Developer, Frontend Developer, Backend Developer, Mobile Development, Flutter' },
     { name: 'author', content: 'Hang Senghong' },
 
     // Open Graph
@@ -104,7 +104,6 @@ useHead({
           'Vue.js',
           'Nuxt.js',
           'TypeScript',
-          'Firebase',
           '.NET Core',
           'C#',
           'SQL Server',
