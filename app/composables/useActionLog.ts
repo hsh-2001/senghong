@@ -58,10 +58,15 @@ export default function useActionLog() {
         });
     }
 
+    const log = ref();
     const getLogs = async () => {
-        const response = await $fetch<ActionLogResponse>('/api/log');
-        return response?.logs || [];
+        try {
+            const response = await $fetch<ActionLogResponse>('/api/log');
+            log.value = response.logs || [];
+        } catch (error) {
+            console.error('Failed to fetch logs:', error);
+        }
     }
 
-    return { logAction, getLogs };
+    return { logAction, getLogs, log };
 };

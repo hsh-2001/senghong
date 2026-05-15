@@ -20,7 +20,15 @@ useHead({
 });
 
 const { logAction } = useActionLog();
+const sessiont = ref();
 onMounted(() => {
-  logAction();
+  if (window.sessionStorage) {
+    sessiont.value = window.sessionStorage.getItem('sessionId');
+  }
+  if (!sessiont.value) {
+    sessiont.value = crypto.randomUUID();
+    window.sessionStorage.setItem('sessionId', sessiont.value);
+    logAction();
+  }
 });
 </script>
