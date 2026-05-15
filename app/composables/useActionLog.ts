@@ -1,6 +1,7 @@
 type GeoPayload = {
     latitude: number
     longitude: number
+    mapUrl: string
     accuracy: number | null
     altitude: number | null
     altitudeAccuracy: number | null
@@ -11,6 +12,10 @@ type GeoPayload = {
 
 type ActionLogResponse = {
     logs?: Record<string, unknown>[]
+}
+
+const createGoogleMapUrl = (latitude: number, longitude: number) => {
+    return `https://www.google.com/maps?q=${latitude},${longitude}`
 }
 
 export default function useActionLog() {
@@ -25,6 +30,7 @@ export default function useActionLog() {
                     resolve({
                         latitude: coords.latitude,
                         longitude: coords.longitude,
+                        mapUrl: createGoogleMapUrl(coords.latitude, coords.longitude),
                         accuracy: coords.accuracy ?? null,
                         altitude: coords.altitude ?? null,
                         altitudeAccuracy: coords.altitudeAccuracy ?? null,

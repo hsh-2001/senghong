@@ -60,6 +60,10 @@ const normalizeNumber = (value: unknown) => {
     return typeof value === 'number' && Number.isFinite(value) ? value : null
 }
 
+const createGoogleMapUrl = (latitude: number, longitude: number) => {
+    return `https://www.google.com/maps?q=${latitude},${longitude}`
+}
+
 const normalizeGeo = (geo: unknown) => {
     if (!geo || typeof geo !== 'object') return null
 
@@ -72,6 +76,7 @@ const normalizeGeo = (geo: unknown) => {
     return {
         latitude,
         longitude,
+        mapUrl: createGoogleMapUrl(latitude, longitude),
         accuracy: normalizeNumber(location.accuracy),
         altitude: normalizeNumber(location.altitude),
         altitudeAccuracy: normalizeNumber(location.altitudeAccuracy),
