@@ -1,3 +1,5 @@
+import { sendTelegramMessage } from '../services/telegramService';
+
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
   const body = await readBody(event);
@@ -36,15 +38,7 @@ _Sent from Portfolio Contact Form_
 `;
 
   try {
-    const response = await $fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-      method: 'POST',
-      body: {
-        chat_id: telegramChatId,
-        text: telegramMessage,
-        parse_mode: 'Markdown',
-      },
-    });
-
+    await sendTelegramMessage(telegramMessage);
     return {
       success: true,
       message: 'Message sent successfully',
