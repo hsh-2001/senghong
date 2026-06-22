@@ -123,7 +123,7 @@ const stats = [
   { value: 'Full Stack', label: 'Web Development' },
 ];
 
-const stackPreview = ['Vue.js', 'Nuxt.js', 'TypeScript', 'Node.js', 'Express.js', '.NET Core', 'SQL', 'NoSQL', 'Agile', 'CI/CD'];
+const stackPreview = ['JS/ TS', 'C#', 'SQL', 'NoSQL', 'Agile', 'CI/CD', 'Cloud'];
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
