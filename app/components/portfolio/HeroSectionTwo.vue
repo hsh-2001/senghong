@@ -34,7 +34,7 @@
             class="rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 font-semibold text-white transition hover:bg-white/10">
             Contact Me
           </button>
-          <a href="/files/Hang_Senghong_Fullstack_developer_CV.pdf" download
+          <a href="/files/Hang_Senghong_Full_Stack_Developer_CV.pdf" download
             class="rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 font-semibold text-white transition hover:bg-white/10">
             Download CV
           </a>
