@@ -242,7 +242,7 @@ export const usePortfolioData = () => {
     {
       id: 1,
       degree: 'Bachelor of Software Development',
-      institution: "Norton Univiersity",
+      institution: "Norton University",
       location: 'Phnom Penh, Cambodia',
       period: '2019 - 2023',
       description: 'Studied software engineering, web development, database systems, and application design. Gained hands-on experience in building web applications, problem solving, and software development methodologies through academic and personal projects.',
