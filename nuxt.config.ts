@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   experimental: {
     viteEnvironmentApi: true,
   },
-  css: ['./app/assets/main.css'],
+  css: ['~/assets/main.css'],
   vite: {
     plugins: [
       tailwindcss(),
