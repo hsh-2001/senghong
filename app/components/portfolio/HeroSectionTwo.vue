@@ -8,8 +8,8 @@
       <div class="hero-reveal hero-reveal-from-left">
         <div
           class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200">
-          <span class="h-2.5 w-2.5 rounded-full bg-white"></span>
-          Available for new opportunities
+          <span class="h-2.5 w-2.5 rounded-full bg-yellow-500"></span>
+          ! Available
         </div>
 
         <p class="mt-6 text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
@@ -123,7 +123,7 @@ const stats = [
   { value: 'Full Stack', label: 'Web Development' },
 ];
 
-const stackPreview = ['JS/ TS', 'C#', 'SQL', 'NoSQL', 'Agile', 'CI/CD', 'Cloud'];
+const stackPreview = ['JS/ TS', 'Java/ Spring', 'C#', 'SQL', 'NoSQL', 'Agile', 'CI/CD', 'Cloud'];
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
