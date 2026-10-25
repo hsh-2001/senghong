@@ -259,12 +259,32 @@ export const usePortfolioData = () => {
   ];
 
   const experience: Experience[] = [
+    // {
+    //   id: 6,
+    //   position: "Software Engineer",
+    //   company: "Acleda Bank",
+    //   location: "Phnom Penh",
+    //   period: "July 2026 - Present",
+    //   description: [
+    //     "Develop full-stack applications using Next.js, Spring, .NET Framework, Oracle, and SQL Server.",
+    //     "Learn and work with Kubernetes and Redis.",
+    //   ],
+    //   technologies: [
+    //     "Next.js",
+    //     "Spring",
+    //     "Oracle",
+    //     ".NET Framework",
+    //     "SQL Server",
+    //     "Kubernetes",
+    //     "Redis",
+    //   ],
+    // },
     {
       id: 1,
       position: "Full Stack Developer",
       company: "Techbodia Co., Ltd",
       location: "Chbar Ampov, Phnom Penh, Cambodia",
-      period: "July 2024 - Present",
+      period: "July 2024 - July 2026",
       description: [
         "Developed scalable web applications using Vue.js and Nuxt.js with responsive, user-friendly interfaces.",
         "Built and maintained RESTful APIs using .NET and SQL Server for business-critical features.",
