@@ -41,21 +41,25 @@ export const usePortfolioData = () => {
       name: "Next.js",
       icon: "▲",
       category: "Framework",
+      image: "/programIcons/nextjs.png",
     },
     {
       name: "Spring Boot",
       icon: "🌱",
       category: "Backend",
+      image: "/programIcons/spring.webp",
     },
     {
       name: "Java",
       icon: "☕",
       category: "Language",
+      image: "/programIcons/java.jpg",
     },
     {
       name: "Oracle Database",
       icon: "◉",
       category: "Database",
+      image: "/programIcons/oracle.png",
     },
     {
       name: "Javascript",

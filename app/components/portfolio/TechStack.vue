@@ -14,7 +14,7 @@
           :style="{ '--skill-delay': `${index * 50}ms` }">
           <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div class="flex min-w-0 items-center gap-3">
-              <img v-if="tech.image" :src="tech.image" :alt="tech.name" class="h-11 w-11 shrink-0 rounded-xl object-cover bg-white/5 p-2" />
+              <img v-if="tech.image" :src="tech.image" :alt="`${tech.name} logo`" class="h-11 w-11 shrink-0 rounded-xl border border-white/10 bg-white p-2 object-contain shadow-sm shadow-black/10" />
               <span v-else
                 class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/5 text-lg font-semibold text-slate-200"
                 aria-hidden="true">
