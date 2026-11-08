@@ -13,8 +13,8 @@ export const usePortfolioData = () => {
 
   const developer = {
     name: "Hang Senghong",
-    title: "Full Stack Developer",
-    bio: "I build modern, scalable web applications that help businesses grow, improve operational efficiency, and deliver better user experiences. When I join a company, I focus on practical software that creates real value for users and supports long-term business success.",
+    title: "Software Engineer | Full-Stack Developer",
+    bio: "I build reliable web applications for real business needs. I’m currently developing a banking application system with Next.js, Spring Boot, and Oracle, with a focus on maintainable software and thoughtful user experiences.",
     socials: [
       {
         name: "LinkedIn",
@@ -37,6 +37,26 @@ export const usePortfolioData = () => {
   ];
 
   const techStack: Tech[] = [
+    {
+      name: "Next.js",
+      icon: "▲",
+      category: "Framework",
+    },
+    {
+      name: "Spring Boot",
+      icon: "🌱",
+      category: "Backend",
+    },
+    {
+      name: "Java",
+      icon: "☕",
+      category: "Language",
+    },
+    {
+      name: "Oracle Database",
+      icon: "◉",
+      category: "Database",
+    },
     {
       name: "Javascript",
       icon: "📘",
@@ -143,6 +163,16 @@ export const usePortfolioData = () => {
   const projects: Project[] = [
     {
       id: 1,
+      name: "Banking Application System",
+      description:
+        "Currently developing a banking application system using Next.js, Spring Boot, and Oracle Database.",
+      technologies: ["Next.js", "Spring Boot", "Oracle Database"],
+      gradient: "bg-linear-to-br from-blue-800 to-indigo-500",
+      icon: "🏦",
+      status: "In Progress",
+    },
+    {
+      id: 2,
       name: "Ampere Electric calculation",
       description:
         "Full features for using to manage electric in Sraschork pagoda",
@@ -155,10 +185,10 @@ export const usePortfolioData = () => {
       background: "/projects/ampere.png",
     },
     {
-      id: 2,
+      id: 3,
       name: "Transaction list manangement",
       description:
-        "Scalable messaging platform with real-time communication, file sharing, and video calls. Built using SignalR for instant updates.",
+        "A transaction-list management project built to help users review and organize transaction records.",
       technologies: ["Nuxt & TS", "PostgreSQL/ Neon", "Tailwind", "Cloudflare"],
       gradient: "bg-linear-to-br from-purple-600 to-pink-500",
       icon: "💸",
@@ -168,7 +198,7 @@ export const usePortfolioData = () => {
       background: "/projects/trm.png",
     },
     {
-      id: 3,
+      id: 4,
       name: "Invitaion website",
       description: "Scalable for using to invite and avialable all events",
       technologies: [
@@ -186,7 +216,7 @@ export const usePortfolioData = () => {
       background: "/projects/invite-web.png",
     },
     {
-      id: 4,
+      id: 5,
       name: "Api Upload files",
       description:
         "Lightweight API built with Hono for Cloudflare Workers, featuring GitHub and Cloudinary image uploads plus Telegram bot support.",
@@ -206,7 +236,7 @@ export const usePortfolioData = () => {
       background: "/projects/upload.png",
     },
     {
-      id: 5,
+      id: 6,
       name: "Programming tutorials",
       description:
         "A collection of programming tutorials and code snippets for various technologies, aimed at helping developers learn and improve their skills.",
@@ -219,7 +249,7 @@ export const usePortfolioData = () => {
       background: "/projects/rean-program.png",
     },
     {
-      id: 6,
+      id: 7,
       name: "Todo List CLI",
       description:
         "A beautiful, fast, and lightweight command-line todo list manager built with Node.js. Features a rich terminal UI with colors, box-drawing characters, and intuitive commands for efficient task management.",
@@ -231,7 +261,7 @@ export const usePortfolioData = () => {
       background: "/projects/todo-cli.png",
     },
     {
-      id: 7,
+      id: 8,
       name: "HRMS System",
       description:
         "A comprehensive Human Resource Management System (HRMS) built with Express.js, React, and PostgreSQL. Features employee management, attendance tracking, payroll processing, and performance evaluation modules.",
@@ -244,10 +274,10 @@ export const usePortfolioData = () => {
       background: "/projects/hrms.png",
     },
     {
-      id: 8,
+      id: 9,
       name: "Coffee Shop Management System",
       description:
-        "A full-featured Coffee Shop Management System built with Nuxt Full Stack with PostgreSQL / Neon as Server. It includes inventory management, order processing, customer management, and reporting features to streamline coffee shop operations.\n And here is testing account\n Username: admin\nPassword: admin123",
+        "A full-stack coffee shop management system built with Nuxt and PostgreSQL. It includes inventory management, order processing, customer management, and reporting features.",
       technologies: ["Nuxt", "Tailwind CSS", "PostgreSQL", "Neon", "REST API"],
       gradient: "bg-linear-to-br from-green-600 to-blue-500",
       icon: "☕",
@@ -259,26 +289,17 @@ export const usePortfolioData = () => {
   ];
 
   const experience: Experience[] = [
-    // {
-    //   id: 6,
-    //   position: "Software Engineer",
-    //   company: "Acleda Bank",
-    //   location: "Phnom Penh",
-    //   period: "July 2026 - Present",
-    //   description: [
-    //     "Develop full-stack applications using Next.js, Spring, .NET Framework, Oracle, and SQL Server.",
-    //     "Learn and work with Kubernetes and Redis.",
-    //   ],
-    //   technologies: [
-    //     "Next.js",
-    //     "Spring",
-    //     "Oracle",
-    //     ".NET Framework",
-    //     "SQL Server",
-    //     "Kubernetes",
-    //     "Redis",
-    //   ],
-    // },
+    {
+      id: 6,
+      position: "Software Engineer",
+      company: "ACLEDA Bank",
+      location: "Phnom Penh",
+      period: "July 2026 - Present",
+      description: [
+        "Develop a banking application system using Next.js, Spring Boot, and Oracle Database.",
+      ],
+      technologies: ["Next.js", "Spring Boot", "Oracle Database"],
+    },
     {
       id: 1,
       position: "Full Stack Developer",

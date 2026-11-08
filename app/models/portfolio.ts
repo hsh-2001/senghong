@@ -13,7 +13,7 @@ export interface Tech {
   name: string;
   icon: string;
   category: string;
-  level: number;
+  level?: number;
   image?: string;
 }
 

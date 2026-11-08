@@ -14,17 +14,22 @@
           :style="{ '--skill-delay': `${index * 50}ms` }">
           <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div class="flex min-w-0 items-center gap-3">
-              <img :src="tech.image" :alt="tech.name" class="h-11 w-11 shrink-0 rounded-xl object-cover bg-white/5 p-2" />
+              <img v-if="tech.image" :src="tech.image" :alt="tech.name" class="h-11 w-11 shrink-0 rounded-xl object-cover bg-white/5 p-2" />
+              <span v-else
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/5 text-lg font-semibold text-slate-200"
+                aria-hidden="true">
+                {{ tech.icon }}
+              </span>
               <div class="min-w-0">
                 <h3 class="wrap-break-word text-sm font-semibold text-white sm:text-base">{{ tech.name }}</h3>
                 <p class="text-xs text-slate-500 sm:text-sm">{{ tech.category }}</p>
               </div>
             </div>
             <span class="self-start rounded-full bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300">
-              {{ tech.level }}%
+              {{ tech.level !== undefined ? `${tech.level}%` : 'Currently using' }}
             </span>
           </div>
-          <div class="mt-4 h-2 overflow-hidden rounded-full bg-white/5">
+          <div v-if="tech.level !== undefined" class="mt-4 h-2 overflow-hidden rounded-full bg-white/5">
             <div class="skill-progress h-full rounded-full bg-white" :style="{ width: tech.level + '%' }"></div>
           </div>
         </div>
@@ -36,8 +41,9 @@
 <script setup lang="ts">
 interface Tech {
   name: string;
+  icon: string;
   category: string;
-  level: number;
+  level?: number;
   image?: string;
 }
 

@@ -21,7 +21,7 @@
 <script setup lang="ts">
 const stats = [
   { value: '20+', label: 'Projects Completed', note: 'Delivered' },
-  { value: '3+', label: 'Years of Experience', note: 'Production' },
+  { value: '4+', label: 'Years of Experience', note: 'Production' },
   { value: '10+', label: 'Tech Stacks', note: 'Daily Use' },
 ];
 </script>

@@ -1,10 +1,10 @@
 # Hang Senghong - Portfolio Website
 
-A modern, responsive portfolio website built with Nuxt 3 and TypeScript, showcasing professional experience, projects, and technical skills.
+A modern, responsive portfolio website built with Nuxt and TypeScript, showcasing professional experience, projects, and technical skills.
 
 ## Overview
 
-This is a personal portfolio website for Hang Senghong, a Full Stack Developer specializing in .NET Core, Vue.js, and modern web technologies. The site features an animated background, interactive sections, and a clean, professional design.
+This is a personal portfolio website for Hang Senghong, a Software Engineer currently developing a banking application system with Next.js, Spring Boot, and Oracle Database. It also showcases previous full-stack work and experience with .NET, Vue.js, and modern web technologies.
 
 ## Features
 
