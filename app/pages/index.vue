@@ -57,14 +57,14 @@ const {
 } = usePortfolioData();
 
 const siteUrl = 'https://senghong.pages.dev';
-const title = 'Hang Senghong - Full Stack Developer';
-const description = 'Full Stack Developer specializing in Vue.js, Nuxt.js, NestJS, Express.js, .NET Core, SQL, NoSQL and modern web technologies. Building scalable applications that help businesses grow, improve operational efficiency, and deliver better user experiences.'
+const title = 'Hang Senghong - Software Engineer';
+const description = 'Software Engineer building a banking application system with Next.js, Spring Boot, and Oracle Database, with experience delivering full-stack web applications.'
 
 useHead({
   title,
   meta: [
     { name: 'description', content: description },
-    { name: 'keywords', content: 'Full Stack Developer, Vue.js Developer, Nuxt.js Developer, .NET Core Developer, TypeScript, Web Development, Software Engineer, Hang Senghong, Cambodia Developer, Frontend Developer, Backend Developer, Mobile Development, Flutter' },
+    { name: 'keywords', content: 'Software Engineer, Full Stack Developer, Next.js, Spring Boot, Java, Oracle Database, TypeScript, Web Development, Hang Senghong, Cambodia Developer' },
     { name: 'author', content: 'Hang Senghong' },
 
     // Open Graph
@@ -91,7 +91,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'Person',
         name: 'Hang Senghong',
-        jobTitle: 'Full Stack Developer',
+        jobTitle: 'Software Engineer',
         url: siteUrl,
         sameAs: [
           'https://www.linkedin.com/in/hang-senghong-158674383',
@@ -99,8 +99,12 @@ useHead({
           'https://github.com/Senghong-2025',
           'https://senghong.pages.dev',
         ],
-        description: 'Full Stack Developer specializing in building scalable applications that help businesses grow, improve operational efficiency, and deliver better user experiences.',
+        description,
         knowsAbout: [
+          'Next.js',
+          'Spring Boot',
+          'Java',
+          'Oracle Database',
           'Vue.js',
           'Nuxt.js',
           'TypeScript',
